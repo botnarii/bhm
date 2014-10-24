@@ -8,6 +8,6 @@ namespace BHM.Entities
 {
     class Email
     {
-        public string Email { get; set; }
+        public string EmailAddress { get; set; }
     }
 }
