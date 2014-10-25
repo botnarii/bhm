@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BHM.Entities
 {
-    class Email
+    class Option
     {
-        public int Id { get; set; }
-        public string EmailAddress { get; set; }
+        public string VarName { get; set; }
+        public string VarValue { get; set; }
     }
 }
