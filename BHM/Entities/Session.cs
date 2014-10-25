@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace BHM.Entities
 {
-    class SmtpAccount
+    class Session
     {
         public int Id { get; set; }
-        public string Login { get; set; }
-        public string Password { get; set; }
-        public int SmtpServerId { get; set; }
+        public DateTime StartAt { get; set; }
         public string Status { get; set; }
     }
 }

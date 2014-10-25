@@ -11,7 +11,7 @@ namespace BHM.Entities
         public int Id { get; set; }
         public string Address { get; set; }
         public int Port { get; set; }
-        public bool UseSSL { get; set; }
-        public List<SmtpAccount> Accounts { get; set; }
+        public bool SSL { get; set; }
+        public int WaitInterval { get; set; }
     }
 }
