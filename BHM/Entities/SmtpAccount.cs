@@ -11,6 +11,6 @@ namespace BHM.Entities
         public string Login { get; set; }
         public string Password { get; set; }
         public int SmtpServerId { get; set; }
-        public string Status { get; set; }
+        public int Status { get; set; }
     }
 }

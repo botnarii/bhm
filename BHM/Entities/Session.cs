@@ -10,6 +10,6 @@ namespace BHM.Entities
     {
         public int Id { get; set; }
         public DateTime StartAt { get; set; }
-        public string Status { get; set; }
+        public int Status { get; set; }
     }
 }

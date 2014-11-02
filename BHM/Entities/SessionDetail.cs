@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BHM.Entities
+﻿namespace BHM.Entities
 {
     class SessionDetail
     {
@@ -14,6 +8,6 @@ namespace BHM.Entities
         public int SmtpServerId { get; set; }
         public int ProxyServerId { get; set; }
         public int EmailId { get; set; }
-        public string Status { get; set; }
+        public int Status { get; set; }
     }
 }
