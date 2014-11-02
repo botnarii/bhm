@@ -30,15 +30,15 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrontView));
             this.pnlTop = new System.Windows.Forms.Panel();
-            this.stsStrpStatus = new System.Windows.Forms.StatusStrip();
-            this.pnlBody = new System.Windows.Forms.Panel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
+            this.tlStrpBtnStart = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.stsStrpStatus = new System.Windows.Forms.StatusStrip();
+            this.pnlBody = new System.Windows.Forms.Panel();
             this.pnlTop.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -54,44 +54,29 @@
             this.pnlTop.Size = new System.Drawing.Size(839, 82);
             this.pnlTop.TabIndex = 0;
             // 
-            // stsStrpStatus
-            // 
-            this.stsStrpStatus.Location = new System.Drawing.Point(0, 431);
-            this.stsStrpStatus.Name = "stsStrpStatus";
-            this.stsStrpStatus.Size = new System.Drawing.Size(839, 22);
-            this.stsStrpStatus.TabIndex = 1;
-            this.stsStrpStatus.Text = "statusStrip1";
-            // 
-            // pnlBody
-            // 
-            this.pnlBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlBody.Location = new System.Drawing.Point(0, 82);
-            this.pnlBody.Name = "pnlBody";
-            this.pnlBody.Size = new System.Drawing.Size(839, 349);
-            this.pnlBody.TabIndex = 2;
-            // 
             // toolStrip1
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(32, 32);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1});
+            this.tlStrpBtnStart});
             this.toolStrip1.Location = new System.Drawing.Point(0, 27);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(839, 55);
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // tlStrpBtnStart
             // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(52, 52);
-            this.toolStripButton1.Text = "toolStripButton1";
+            this.tlStrpBtnStart.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.tlStrpBtnStart.Image = ((System.Drawing.Image)(resources.GetObject("tlStrpBtnStart.Image")));
+            this.tlStrpBtnStart.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.tlStrpBtnStart.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.tlStrpBtnStart.Name = "tlStrpBtnStart";
+            this.tlStrpBtnStart.Size = new System.Drawing.Size(52, 52);
+            this.tlStrpBtnStart.Text = "toolStripButton1";
+            this.tlStrpBtnStart.Click += new System.EventHandler(this.TlStrpBtnStartClick);
             // 
             // menuStrip1
             // 
@@ -113,12 +98,6 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // helpToolStripMenuItem
-            // 
-            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.helpToolStripMenuItem.Text = "Help";
-            // 
             // settingsToolStripMenuItem
             // 
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
@@ -130,6 +109,29 @@
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
             this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "Help";
+            // 
+            // stsStrpStatus
+            // 
+            this.stsStrpStatus.Location = new System.Drawing.Point(0, 431);
+            this.stsStrpStatus.Name = "stsStrpStatus";
+            this.stsStrpStatus.Size = new System.Drawing.Size(839, 22);
+            this.stsStrpStatus.TabIndex = 1;
+            this.stsStrpStatus.Text = "statusStrip1";
+            // 
+            // pnlBody
+            // 
+            this.pnlBody.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBody.Location = new System.Drawing.Point(0, 82);
+            this.pnlBody.Name = "pnlBody";
+            this.pnlBody.Size = new System.Drawing.Size(839, 349);
+            this.pnlBody.TabIndex = 2;
+            this.pnlBody.Paint += new System.Windows.Forms.PaintEventHandler(this.PnlBodyPaint);
             // 
             // FrontView
             // 
@@ -157,7 +159,7 @@
         private System.Windows.Forms.StatusStrip stsStrpStatus;
         private System.Windows.Forms.Panel pnlBody;
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.ToolStripButton tlStrpBtnStart;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
